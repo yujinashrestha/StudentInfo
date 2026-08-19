@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  Course: MyString
+  Phone: MyString
+  email: MyString
+  roll_number: MyString
+  birthdate: 2026-08-18
+
+two:
+  name: MyString
+  Course: MyString
+  Phone: MyString
+  email: MyString
+  roll_number: MyString
+  birthdate: 2026-08-18
