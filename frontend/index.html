@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Manager</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Student Manager</h1>
+
+    <div class="toolbar">
+      <input type="text" id="searchInput" placeholder="Search by name, email, roll no...">
+      <button id="addRowBtn" class="btn btn-primary">+ Add Student</button>
+    </div>
+
+    <table id="studentTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Roll No.</th>
+          <th>Course</th>
+          <th>Phone</th>
+          <th>Birthdate</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="studentTableBody">
+        <!-- Rows are rendered here by JS: both existing students (from
+             the API) and new blank editable rows added by the button. -->
+      </tbody>
+    </table>
+
+    <p id="statusMsg"></p>
+  </div>
+
+  <!-- Row template: cloned via jQuery whenever we need a new editable row
+       (either a brand-new student, or an existing row put into edit mode).
+       Keeping markup in one place means the "add" and "edit" code paths
+       don't duplicate HTML strings. -->
+  <template id="rowTemplate">
+    <tr>
+      <td><input type="text" class="input-name" placeholder="Full name"></td>
+      <td><input type="email" class="input-email" placeholder="email@example.com"></td>
+      <td><input type="text" class="input-roll" placeholder="e.g. CS-101"></td>
+      <td><input type="text" class="input-course" placeholder="Course"></td>
+      <td><input type="tel" class="input-phone" placeholder="10-digit phone" maxlength="10" pattern="\d{10}"></td>
+      <td><input type="date" class="input-birthdate"></td>
+      <td class="actions">
+        <button class="btn btn-save">Save</button>
+        <button class="btn btn-cancel">Cancel</button>
+      </td>
+    </tr>
+  </template>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
